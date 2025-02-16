@@ -3,6 +3,10 @@ package edu.eci.arsw.springdemo;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+
+
 public class SpanishSpellChecker implements SpellChecker {
 
 	@Override
