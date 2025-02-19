@@ -1,23 +1,15 @@
 package edu.eci.arsw.springdemo;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-
-@Service
 public class GrammarChecker {
-
 
 	SpellChecker sc;
 
 	String x;
-        
-    @Autowired
-    public GrammarChecker(SpellChecker spellChecker) {
-        this.sc = spellChecker;
-    }
-	    
+
+	public GrammarChecker(SpellChecker spellChecker) {
+		this.sc = spellChecker;
+	}
+
 	public SpellChecker getSpellChecker() {
 		return sc;
 	}
@@ -26,17 +18,11 @@ public class GrammarChecker {
 		this.sc = sc;
 	}
 
-
-	public String check(String text){
-		
-		StringBuffer sb=new StringBuffer();
-		sb.append("Spell checking output:"+sc.checkSpell(text));
+	public String check(String text) {
+		StringBuffer sb = new StringBuffer();
+		sb.append("Spell checking output:" + sc.checkSpell(text));
 		sb.append("Plagiarism checking output: Not available yet");
-		
-		
 		return sb.toString();
-		
 	}
-	
-	
+
 }
