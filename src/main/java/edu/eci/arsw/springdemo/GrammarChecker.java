@@ -1,12 +1,18 @@
 package edu.eci.arsw.springdemo;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+@Service
 public class GrammarChecker {
 
 	SpellChecker sc;
 
 	String x;
-
-	public GrammarChecker(SpellChecker spellChecker) {
+	@Autowired
+	public GrammarChecker(@Qualifier("spanishSpellChecker") SpellChecker spellChecker) {
 		this.sc = spellChecker;
 	}
 
